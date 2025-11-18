@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>損益率計算ツール</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="card">
+                <h1>損益率計算ツール</h1>
+
+                <div class="field">
+                    <fieldset>
+                        <legend>ポジション</legend>
+                        <select id="side" onchange="recalc()">
+                            <option value="long">ロング</option>
+                            <option value="short">ショート</option>
+                        </select>
+                    </fieldset>
+                </div>
+
+                <label class="split-toggle">
+                    <input id="splitCheck" type="checkbox" onchange="onToggleSplit(event)" />
+                    <span>分割エントリーを使用</span>
+                </label>
+
+                <div id="splitPanel" class="split-panel" aria-hidden="true">
+                    <div id="posList" style="display: flex; flex-direction: column; gap: 6px"></div>
+                    <button id="addPosBtn" class="add-btn" type="button" onclick="addPos()">＋ エントリーを追加</button>
+                    <div id="splitStatus" class="split-status">
+                        <div id="splitQty">合計数量: 0</div>
+                        <div id="splitAvg">平均取得単価: -</div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <fieldset>
+                        <legend>エントリー価格</legend>
+                        <input id="entry" type="number" placeholder="例: 380.9" oninput="onManualEntryChange()" />
+                    </fieldset>
+                </div>
+
+                <div class="field">
+                    <fieldset>
+                        <legend>エグジット価格</legend>
+                        <input id="exit" type="number" placeholder="例: 416.7" oninput="recalc()" />
+                    </fieldset>
+                </div>
+
+                <div class="field">
+                    <fieldset>
+                        <legend>ポジション数量</legend>
+                        <input
+                            id="qty"
+                            type="number"
+                            step="0.00000001"
+                            placeholder="例: 200"
+                            oninput="onManualQtyChange()"
+                        />
+                    </fieldset>
+                </div>
+
+                <div class="field" style="display: flex; gap: 8px; flex-wrap: wrap">
+                    <fieldset style="flex: 1; min-width: 120px">
+                        <legend>取引手数料（%）</legend>
+                        <input id="fee" type="number" value="0" oninput="recalc()" />
+                    </fieldset>
+                    <fieldset style="flex: 1; min-width: 120px">
+                        <legend>目標利回り（%）</legend>
+                        <input id="target" type="number" value="1" oninput="recalc()" />
+                    </fieldset>
+                </div>
+
+                <div id="result" class="result"></div>
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.wrap -->
+        <script src="js/script.js"></script>
+    </body>
+</html>
