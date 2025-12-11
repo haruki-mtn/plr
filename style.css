@@ -57,7 +57,7 @@ h1 {
 fieldset {
     display: flex;
     align-items: center;
-    border: 1px solid #d1d5db;
+    border: 1px solid #dadce0;
     border-radius: 0.5rem;
     padding: 0 0.3rem;
 }
@@ -99,7 +99,7 @@ select {
     margin-top: 0.4rem;
     border-radius: 0.5rem;
     padding: 0.4rem;
-    background: aliceblue;
+    background: #fafafa;
 }
 #posList {
     display: flex;
@@ -118,33 +118,38 @@ select {
     width: 2rem;
     height: 2rem;
     margin-top: 0.4rem;
-    border: 1px solid #d1d5db;
+    border: 1px solid #dadce0;
     border-radius: 0.5rem;
+    color: #2d68ce;
     background: #fff;
     cursor: pointer;
 }
 .split-del-btn:hover {
-    background: #f3f4f6;
+    background: #f7fafe;
 }
 
 #add-entry-btn {
     width: 100%;
     height: 2rem;
-    border: none;
+    border: 1px solid #dadce0;
     border-radius: 0.5rem;
-    color: #fff;
+    color: #2d68ce;
     font-weight: bold;
     font-size: 0.85rem;
-    background: dodgerblue;
+    background: #fff;
     cursor: pointer;
+}
+#add-entry-btn:hover {
+    background: #f7fafe;
 }
 #split-status {
     display: flex;
-    justify-content: space-around;
     border-radius: 0.5rem;
-    padding: 0.2rem 0.4rem;
+    padding: 0.1rem 0.4rem;
     font-size: 0.85rem;
-    background: lightsteelblue;
+}
+#split-status div {
+    width: 48%;
 }
 /* 分割エントリーここまで */
 
@@ -161,7 +166,7 @@ select {
     border-radius: 0.5rem;
     padding: 0.75rem;
     font-size: 0.9rem;
-    background: #fafafa;
+    background: #f8f9fa;
 }
 .profit {
     color: green;
